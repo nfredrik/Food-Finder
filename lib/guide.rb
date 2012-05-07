@@ -44,7 +44,7 @@ end
 	def do_action(action)
 		case action
 		when 'list'
-			puts 'listing...'
+			list
 		when 'find'
 			puts 'finding...'
 		when 'add'
@@ -63,6 +63,14 @@ end
 			puts "\n Restaurant Added\n\n"
 		else
 			puts "\n Save Error: Restaurant not added. \n\n"
+		end
+	end
+	
+	def list
+		puts "\n LISTING RESTAURANTS \n"
+		restaurants = Restaurant.saved_restaurants
+		restaurants.each do |rest|
+			puts rest.name + " | " + rest.cuisine + " | " + rest.price
 		end
 	end
 	

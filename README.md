@@ -1,2 +1,7 @@
 #Food Finder
-Chapter 9 of Lynda's [Ruby Essential Training](http://www.lynda.com/Ruby-tutorials/essential-training/47905-2.html) is a terminal app incorporating all the lessons learned in the course.
+
+An exercise to practice Ruby.
+
+Following along with Lynda's [Ruby Essential Training](http://www.lynda.com/Ruby-tutorials/essential-training/47905-2.html) course. 
+This terminal app incorporates all the lessons learned in the course.
+

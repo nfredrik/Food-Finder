@@ -1,2 +1,2 @@
 Bangkok Bay	Thai	20
-Outback	Cow	35
+Outback Steakhouse	Steakhouse	35
