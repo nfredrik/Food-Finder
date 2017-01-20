@@ -1,12 +1,15 @@
 class Restaurant
 
+        # TODO: Lyfta ut fileops for att vara agnostics?
 	@@filepath = nil
 	def self.filepath= (path=nil)
 		@@filepath = File.join(APP_ROOT, path)
 	end
 	
 	attr_accessor :name, :cuisine, :price
-	
+
+        # TODO: kolla p? exist forst, behovs det forsta?
+ 	
 	def self.file_exists?
 		if @@filepath && File.exists?(@@filepath)
 			return true
@@ -34,6 +37,7 @@ class Restaurant
 			file = File.new(@@filepath, 'r')
 			file.each_line do |line|
 				
+                                #TODO: smart skapa ett object for varje json, kanske gar att losa med json/openstruct?
 				restaurants << Restaurant.new.import_line(line.chomp)
 			end
 			file.close
@@ -41,12 +45,15 @@ class Restaurant
 		return restaurants
 	end
 
+        # TODO: defaults
+
 	def initialize(args={})
 		@name    = args[:name] || ""
 		@cuisine = args[:cuisine] || ""
 		@price   = args[:price] || ""
 	end
 
+        # TODO: lasa in json
 	def import_line(line)
 		line_array = line.split("\t")
 		@name, @cuisine, @price = line_array
